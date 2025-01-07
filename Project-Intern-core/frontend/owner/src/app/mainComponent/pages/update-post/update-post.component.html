@@ -1,0 +1,85 @@
+<div class="content-wrapper">
+  <form [formGroup]="postForm" (ngSubmit)="onUpdate()">
+    <div class="container-xxl container-p-y">
+      <div class="row justify-content-center align-items-center mb-4">
+        <div class="col-lg-12 d-flex justify-content-between">
+          <h3 class="header">{{"labels.updatePost" | translate}}</h3>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <ul class="nav nav-pills flex-column flex-md-row">
+            <li class="nav-item">
+              <a class="nav-link" [class.active]="selectedTab === 'Vietnamese'" (click)="selectTab('Vietnamese')">
+                <img class="flags" src="../../../../assets/img/flags/vietnam.png" alt="">Tiếng Việt
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [class.active]="selectedTab === 'English'" (click)="selectTab('English')">
+                <img class="flags" src="../../../../assets/img/flags/united-states.png" alt="" >Tiếng Anh
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [class.active]="selectedTab === 'Chinese'" (click)="selectTab('Chinese')">
+                <img class="flags" src="../../../../assets/img/flags/china.png" alt="" >Tiếng Trung
+              </a>
+            </li>
+          </ul>
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="form-label" for="title">{{"labels.title" | translate}}</label>
+                    <input type="text" id="title" class="form-control" formControlName="title" placeholder="Title" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="body">{{"labels.content" | translate}}</label>
+                    <ckeditor id="body" formControlName="body" [editor]="Editor" (ready)="onReady($event)" required>
+                    </ckeditor>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="form-container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group" style="margin-bottom: 15px;">
+                  <label for="category_id" class="form-label">{{"labels.category" | translate}}</label>
+                  <select class="form-select" id="category_id" formControlName="category_id" required>
+                    <option *ngFor="let category of categories" [value]="category.id">
+                      {{ category.name }}
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                  <label class="form-label" for="file">{{"labels.file" | translate}}</label>
+                  <input type="file" id="file" class="form-control" formControlName="file" (change)="onFileChange($event)">
+                  <div class="preview">
+                    <img *ngIf="previewUrl" [src]="previewUrl" alt="File Preview" class="img-thumbnail mt-2">
+                  </div>
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                  <label for="status" class="form-label">{{"labels.status" | translate}}</label>
+                  <div id="status" class="switch" style="margin: 20px;">
+                    <input type="checkbox" id="switch1" formControlName="status">
+                    <label for="switch1"></label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <a routerLink="/post">
+                    <button type="button" class="btn btn-danger" style="margin-right: 10px;"><fa-icon [icon]="faXmark"></fa-icon>{{"buttons.cancel" | translate}}</button>
+                  </a>
+                  <button type="submit" class="btn btn-primary" [disabled]="postForm.invalid"><fa-icon [icon]="faFloppyDisk"></fa-icon>{{"buttons.save" | translate}}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

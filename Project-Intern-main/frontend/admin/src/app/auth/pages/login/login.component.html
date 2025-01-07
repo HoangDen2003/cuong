@@ -1,0 +1,189 @@
+<ng-template #standardTpl> I'm a standard toast </ng-template>
+<ng-template #successTpl> I'm a success toast </ng-template>
+
+<div class="container-xxl">
+  <div class="authentication-wrapper authentication-basic container-p-y">
+    <div class="authentication-inner">
+      <!-- Register -->
+      <div class="card">
+        <div class="card-body">
+          <!-- Logo -->
+          <div class="app-brand justify-content-center">
+            <a href="user.html" class="app-brand-link gap-2">
+              <img
+                src="../assets/img/logo/logo.png"
+                alt=""
+                width="150"
+                height="150"
+              />
+            </a>
+          </div>
+          <!-- /Logo -->
+          <h4 class="mb-2 text-center">
+            {{ "modules.login.welcome" | translate }}! 👋
+          </h4>
+          <p class="mb-4 text-center">
+            {{ "modules.login.subWelcome" | translate }}
+          </p>
+
+          <form
+            #formData="ngForm"
+            id="formAuthentication"
+            class="mb-3 fv-plugins-bootstrap5 fv-plugins-framework"
+            novalidate="novalidate"
+            (ngSubmit)="onSubmit(formData.value)"
+          >
+            <div class="mb-3 fv-plugins-icon-container">
+              <label for="email" class="form-label"
+                >{{ "labels.email" | translate }}
+                {{ "labels.or" | translate }}
+                {{ "labels.username" | translate }}
+              </label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="{{ 'modules.login.holderEmail' | translate }}"
+                autofocus=""
+                required
+                ngModel
+                [(ngModel)]="email"
+              />
+
+              <div
+                class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"
+              >
+                <div
+                  class="text-danger"
+                  data-field="email"
+                  *ngFor="let error of errors"
+                  [ngClass]="error.field === 'email' ? 'd-block' : 'd-none'"
+                >
+                  {{ error.message }}
+                </div>
+              </div>
+            </div>
+            <div class="mb-3 form-password-toggle fv-plugins-icon-container">
+              <div class="d-flex justify-content-between">
+                <label class="form-label" for="password">{{
+                  "labels.password" | translate
+                }}</label>
+                <a routerLink="/auth/forgot-password">
+                  <small>{{ "buttons.forgotPassword" | translate }}?</small>
+                </a>
+              </div>
+              <div class="input-group input-group-merge has-validation">
+                <input
+                  id="password"
+                  class="form-control"
+                  name="password"
+                  placeholder="············"
+                  aria-describedby="password"
+                  [type]="inputType"
+                  ngModel
+                  [(ngModel)]="password"
+                />
+                <span
+                  class="input-group-text cursor-pointer"
+                  (click)="togglePW()"
+                >
+                  <i
+                    class="fa-regular d-block"
+                    [ngClass]="isCheckPW ? 'fa-eye' : 'fa-eye-slash'"
+                  ></i>
+                </span>
+              </div>
+              <div
+                class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"
+              >
+                <div
+                  class="text-danger"
+                  data-field="password"
+                  *ngFor="let error of errors"
+                  [ngClass]="error.field === 'password' ? 'd-block' : 'd-none'"
+                >
+                  {{ error.message }}
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="remember-me"
+                  name="checked"
+                  (change)="onRemember($event)"
+                  required
+                />
+                <label class="form-check-label" for="remember-me">
+                  {{ "labels.rememberMe" | translate }}
+                </label>
+              </div>
+            </div>
+            <div class="mb-3">
+              <button class="btn btn-primary d-grid w-100" type="submit">
+                {{ "buttons.signIn" | translate }}
+              </button>
+            </div>
+            <input type="hidden" />
+          </form>
+        </div>
+      </div>
+      <!-- /Register -->
+    </div>
+  </div>
+  <!-- Example single danger button -->
+  <div class="position-fixed top-0 end-0 mt-2 me-2">
+    <a role="button" (click)="onDropdown()">
+      <!-- <img
+        class="me-2"
+        src="../../../../assets/img/avatars/en_flag.jpg"
+        width="22"
+        alt=""
+      /> -->
+      <i
+        class="flag-icon me-2"
+        [ngClass]="locale === 'en' ? 'flag-icon-gb' : 'flag-icon-vn'"
+      ></i>
+      <i class="fa-solid fa-caret-down"></i>
+    </a>
+    <ul
+      class="dropdown-custom position-absolute end-0 mt-3"
+      [ngStyle]="{ display: isDropdown ? 'block' : 'none' }"
+    >
+      <li>
+        <a class="dropdown-item" (click)="onClickLocale('en')">
+          <img
+            class="me-2"
+            src="../../../../assets/img/avatars/en_flag.jpg"
+            width="20"
+            data-locale="en"
+            alt=""
+          />
+          <i
+            class="fa fa-check text-success ms-2"
+            [ngStyle]="{ display: locale === 'en' ? 'inline' : 'none' }"
+          ></i>
+        </a>
+      </li>
+      <li>
+        <a class="dropdown-item" (click)="onClickLocale('vi')">
+          <img
+            class="me-2"
+            src="../../../../assets/img/avatars/vn_flag.png"
+            width="20"
+            data-locale="vi"
+            alt=""
+          />
+          <i
+            class="fa fa-check text-success ms-2"
+            [ngStyle]="{ display: locale === 'vi' ? 'inline' : 'none' }"
+          ></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- <app-toasts></app-toasts> -->
+</div>

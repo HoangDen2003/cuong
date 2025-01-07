@@ -1,0 +1,69 @@
+<div class="container-xxl">
+  <div class="authentication-wrapper authentication-basic container-p-y">
+    <div class="authentication-inner">
+      <!-- Register Card -->
+      <div class="card">
+        <div class="card-body">
+          <!-- Logo -->
+          <div class="app-brand justify-content-center">
+            <a href="#" class="app-brand-link gap-2">
+              <span class="app-brand-logo demo">
+                <img src="../assets/img/layouts/logo1.jpg" alt="" style="width: 200px;">
+              </span>
+            </a>
+          </div>
+          <!-- /Logo -->
+          <form id="formAuthentication" class="mb-3" [formGroup]="postForm" (ngSubmit)="register()">
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username"
+                autofocus [(ngModel)]="username" formControlName="username" />
+                <div *ngIf="postForm.get('username')?.invalid && postForm.get('username')?.touched" class="error">
+                  Please enter a valid username.
+                </div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email"
+                [(ngModel)]="email" formControlName="email"/>
+                <div *ngIf="postForm.get('email')?.invalid && postForm.get('email')?.touched" class="error">
+                  Please enter a valid email.
+                </div>
+            </div>
+            <div class="mb-3 form-password-toggle">
+              <label class="form-label" for="password">Password</label>
+              <div class="input-group input-group-merge">
+                <input type="password" id="password" class="form-control" name="password"
+                  placeholder="Enter your password" aria-describedby="password" formControlName="password"
+                  [(ngModel)]="password" required>
+                <div *ngIf="postForm.get('password')?.invalid && postForm.get('password')?.touched" class="error">
+                  Please enter a valid password has min length is 6 characters.
+                </div>
+              </div>
+            </div>
+            <div class="mb-3 form-password-toggle">
+              <label class="form-label" for="confirmPassword">Confirm password</label>
+              <div class="input-group input-group-merge">
+                <input type="password" id="confirmPassword" class="form-control" name="confirmPassword"
+                  placeholder="Enter your confirm password" aria-describedby="confirmPassword" formControlName="confirmPassword"
+                  [(ngModel)]="confirmPassword" required>
+                <div *ngIf="postForm.get('confirmPassword')?.invalid && postForm.get('confirmPassword')?.touched" class="error">
+                  Please enter a valid password has min length is 6 characters.
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary d-grid w-100" type="submit" [disabled]="postForm.invalid">Sign up</button>
+          </form>
+
+          <p class="text-center">
+            <span>Already have an account?</span>
+            <a routerLink="/auth/login">
+              <span>Sign in instead</span>
+            </a>
+          </p>
+        </div>
+      </div>
+      <!-- Register Card -->
+    </div>
+  </div>
+</div>

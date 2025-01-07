@@ -1,0 +1,78 @@
+/* #sticker {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    overflow: hidden;
+  } */
+
+/* #sticker.active {
+  max-height: 100%;
+  opacity: 1;
+  transform: translateY(0);
+} */
+
+.read-more {
+  color: #0684ff;
+  line-height: 1.6rem;
+  max-height: 21.2rem;
+  transition: max-height 0.5s ease;
+  text-align: justify;
+  cursor: pointer;
+}
+
+.responsive-img-span img,
+.responsive-img-span p img,
+.responsive-img-span picture img,
+.responsive-img-span p picture img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+#sticker.active {
+  display: block;
+  max-height: 100%;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+select {
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.card-text {
+  max-height: 1rem;
+  overflow: hidden;
+  /* display: -webkit-box; */
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  transition: max-height 0.5s ease;
+  line-height: 1.6rem;
+}
+
+.read-more {
+  line-height: 1.6rem;
+  max-height: 21.2rem;
+  transition: max-height 0.5s ease;
+  text-align: justify;
+}
+
+.card-text-right{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  transition: max-height 0.5s ease;
+  line-height: 1.6rem;
+}
+
+.info-use{
+  text-align: right;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: 'Segoe-UI-B';
+  margin-top: 20px;
+}

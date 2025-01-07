@@ -1,0 +1,36 @@
+<div class="modal" id="edit-status-dialog" style="display: none">
+    <div class="modal-dialog dialog-fixed bd-1-main br-8 bg-white fade">
+        <div class="modal-content">
+            <div class="modal-header flex justify-sb">
+                <div class="dialog-title">
+                    <h3 class="fs-18 text-title fw-600 mb-0">{{ "labels.editStatus" | translate }}</h3>
+                </div>
+                <div class="dialog-btn">
+                    <a class="text-close text-decoration-none cursor" (click)="closeModal()">
+                        <div class="icon fs-20"><i class="fa-solid fa-xmark"></i></div>
+                    </a>
+                </div>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+                    <div class="">
+                        <div class="col-lg-12">
+                            <div class="mb-3">
+                                <label for="status" class="form-label"></label>
+                                <select class="form-select" id="value" formControlName="value" (click)="toggleItems()" required>
+                                    <option value="" selected disabled>{{ selectedStatusText }}</option>
+                                    <option *ngFor="let status of statuses" [value]="status.value">
+                                      {{ status.name }}
+                                    </option>
+                                  </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="float: right;">
+                        <button type="submit" class="btn_ok btn btn-primary data-submit" [disabled]="postForm.invalid"><fa-icon [icon]="faFloppyDisk"></fa-icon>{{ "buttons.save" | translate }}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+    <div class="app-brand demo">
+        <a routerLink="/post" class="app-brand-link">
+            <span class="app-brand-logo demo">
+                <img src="../assets/img/layouts/logo1.jpg" alt="" style="width: 170px;">
+            </span>
+        </a>
+    </div>
+    <ul class="menu-inner py-1">
+        <!-- Dashboards -->
+        <li class="menu-item" [ngClass]="{'active': isDashboardActive()}">
+            <a routerLink="/#" class="menu-link">
+                <fa-icon [icon]="faDashboard"></fa-icon>
+                <div data-i18n="Basic">{{ "labels.dashboards" | translate }}</div>
+            </a>
+        </li>
+
+        <!-- Post -->
+        <li class="menu-item" [ngClass]="{'active': isPostActive()}">
+            <a routerLink="/post" class="menu-link">
+                <fa-icon [icon]="faNewspaper"></fa-icon>
+                <div data-i18n="Basic">{{ "buttons.post" | translate }}</div>
+            </a>
+        </li>
+    </ul>
+</aside>

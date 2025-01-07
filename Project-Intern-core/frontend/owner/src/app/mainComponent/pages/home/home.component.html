@@ -1,0 +1,166 @@
+<div class="content-wrapper">
+    <div>
+      <div class="header-container" style="display: flex; align-items: center; justify-content: space-between; margin: 0px 0px 20px 0px;">
+        <div class="title flex direction-col">
+          <h2 class="my-0">{{ "labels.postList" | translate }}</h2>
+        </div>
+        <div>
+          <a routerLink="/create-post" class="">
+            <button class="btn btn-secondary add-item btn-primary">
+              <span><fa-icon [icon]="faPlusSquare" style="margin-right: 6px;"></fa-icon><span class="d-none d-sm-inline-block">{{ "labels.addNewPost" | translate }}</span></span>
+            </button>
+          </a>
+        </div>
+      </div>
+      <div class="page-list bg-white">
+        <div class="card">
+          <div class="card-datatable table-responsive">
+            <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper dt-bootstrap5">
+              <div class="row" style="margin: 15px 0px 15px 0px;">
+                <div id="DataTables_Table_1_filter" class="dataTables_filter">
+                  <div class="row">
+                    <div class="col-4 px-0">
+                      <div class="search-input ps-re">
+                        <a class="text-black ps-ab p-8-11 fs-18 fl-r opacity-08" style="cursor: pointer;">
+                          <i class="fa-solid fa-magnifying-glass" (click)="search(searchTerm)"></i>
+                        </a>
+                        <input class="form-control ms-2" type="text" [(ngModel)]="searchTerm" placeholder="Search ..." (keyup.enter)="search(searchTerm)" />
+                      </div>
+                    </div>
+                    <div class="col-5"></div>
+                    <div class="col-2" style="text-align: right;padding-right: 0px;">
+                      <button class="btn btn-secondary item" data-bs-toggle="dropdown" aria-expanded="false" [disabled]="!isAnyPostSelected()">
+                        <span><fa-icon [icon]="faSliders"></fa-icon><span>{{ "labels.actions" | translate }}</span></span>
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-end m-0">
+                        <a href="javascript:;" class="dropdown-item" (click)="showModal('edit-status-dialog', getSelectedPostIds())">
+                          <span class="ms-1"><fa-icon [icon]="faToggleOn"></fa-icon><span>{{ "labels.editStatus" | translate }}</span></span>
+                        </a>
+                        <a href="javascript:;" class="dropdown-item" (click)="showModal('edit-category-dialog', getSelectedPostIds())">
+                          <span class="ms-1"><fa-icon [icon]="faBook"></fa-icon><span>{{ "labels.editCategory" | translate }}</span></span>
+                        </a>
+                        <a href="javascript:;" class="dropdown-item" (click)="showModal('delete-mutipal-post', getSelectedPostIds())">
+                          <span class="ms-1"><fa-icon [icon]="faTrash"></fa-icon><span>{{ "buttons.deleteAll" | translate }}</span></span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-1" style="text-align: left;">
+                      <button class="btn btn-secondary item" style="width: 80px;">
+                        <a href="javascript:;" class="dropdown-item" (click)="showModal('filter-dialog')">
+                          <span style="margin-left: -7px;"><fa-icon [icon]="faFilter"></fa-icon><span>{{ "labels.filter" | translate }}</span></span>
+                        </a>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <table class="dt-fixedheader table border-top dataTable dtr-column" id="DataTables_Table_1" aria-describedby="DataTables_Table_1_info">
+                <thead>
+                  <tr>
+                    <th class="control sorting_disabled dtr-hidden" style="width: 0px; display: none;" aria-label=""></th>
+                    <th class="sorting_disabled dt-checkboxes-cell dt-checkboxes-select-all" style="width: 18px;" data-col="1" aria-label="">
+                      <input type="checkbox" class="form-check-input" id="select-all" [(ngModel)]="selectAll" (change)="checkAll($event)">
+                    </th>
+                    <th class="sorting" style="width: 400px;">{{ "labels.title" | translate }}</th>
+                    <th class="sorting" style="width: 200px;">{{ "labels.createdDate" | translate }}</th>
+                    <th class="sorting" style="width: 150px;">{{ "labels.category" | translate }}</th>
+                    <th class="sorting" style="width: 150px;">{{ "labels.locale" | translate }}</th>
+                    <th class="sorting" style="width: 140px;">{{ "labels.status" | translate }}</th>
+                    <th class="sorting" style="width: 155px; text-align-last: center;">{{ "labels.actions" | translate }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="odd" *ngFor="let post of posts">
+                    <td class="dt-checkboxes-cell">
+                      <input type="checkbox" class="dt-checkboxes form-check-input" [(ngModel)]="post.selected"
+                        (change)="updateSelectAllState()">
+                    </td>
+                    <td>
+                      <div class="d-flex justify-content-start align-items-center">
+                        <div class="d-flex flex-column"><span class="emp_name text-truncate" style="max-width: 400px;">{{ getTranslationData(post.translations).title }}</span></div>
+                      </div>
+                    </td>
+                    <td style="max-width: 200px;">{{ post.formattedDate }}</td>
+                    <td style="max-width: 150px;">{{ post.category.name }}</td>
+                    <td style="max-width: 150px;"><img src="{{ getTranslationData(post.translations).languageName }}" alt="" style="height: 32px; width: 32px;"></td>
+                    <td>
+                      <span [ngClass]="post.status === 'true' ? 'badge bg-label-success' : 'badge bg-label-danger'">{{ post.status === 'true' ? 'Active' : 'Hidden' }}</span>
+                    </td>
+                    <td>
+                      <div class="d-flex justify-content-center">
+                        <button class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown" aria-expanded="false">
+                          <fa-icon [icon]="faEllipsisV"></fa-icon>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end m-0">
+                          <a routerLink="/update-post/{{ post.id }}" class="dropdown-item">
+                            <fa-icon [icon]="faEdit"></fa-icon>
+                            <span class="ms-1">{{ "buttons.update" | translate }}</span>
+                          </a>
+                          <a routerLink="/detail-post/{{ post.id }}" class="dropdown-item">
+                            <fa-icon [icon]="faEye"></fa-icon>
+                            <span class="ms-1">{{ "buttons.details" | translate }}</span>
+                          </a>
+                          <div class="dropdown-divider"></div>
+                          <a href="javascript:;" (click)="showModal('delete-mutipal-post', [post.id])" class="dropdown-item text-danger delete-record align-items-center fs-15" data-id="#">
+                            <fa-icon [icon]="faTrash"></fa-icon>
+                            <span class="ms-1">{{ "buttons.delete" | translate }}</span>
+                          </a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr *ngIf="totalPosts === 0">
+                    <td colspan="9" class="text-center">{{ "messages.noPosts" | translate }}</td>
+                  </tr>
+                </tbody>
+                <tfoot></tfoot>
+              </table>
+              <div class="row" style="margin: 15px 0px 15px 0px;">
+                <div class="col-md-2" style="display: inline-flex;">
+                  <p style="margin-top: 15px; text-align: right;">{{ "labels.rowsPerPage" | translate }}</p>
+                  <select id="itemsPerPageSelect" style="margin-bottom: 8px;padding-left: 10px;border: 0px;width: 60px;" class="form-select" [(ngModel)]="itemsPerPage" (change)="onItemsPerPageChange($event)">
+                    <option *ngFor="let option of availableItemsPerPage" [value]="option">{{ option }}</option>
+                  </select>
+                </div>
+                <div class="col-md-10" style="padding-top: 10px;text-align: right;">
+                  <!-- Pagination -->
+                  <ul class="pagination align-items-center justify-content-end" style="margin-right: 10px;">
+                    <li class="page-item" [class.disabled]="currentPage === 1">
+                      <a class="page-link" (click)="currentPage > 1 && onPageChange(currentPage - 1)">
+                        {{ "buttons.previous" | translate }}
+                      </a>
+                    </li>
+                    <li class="page-item" *ngIf="currentPage > 2" [ngStyle]="{ display: currentPage > 1 ? 'block' : 'none' }">
+                      <a class="page-link" (click)="currentPage > 1 && onPageChange(currentPage - 1)">
+                        ...
+                      </a>
+                    </li>
+                    <li class="page-item" *ngFor="let page of [].constructor(totalPages); let i = index" [class.active]="currentPage === i + 1">
+                      <a class="page-link" (click)="onPageChange(i + 1)">
+                        {{ i + 1 }}
+                      </a>
+                    </li>
+                    <li class="page-item" [class.disabled]="currentPage === totalPages">
+                      <a class="page-link" (click)="currentPage < totalPages && onPageChange(currentPage + 1)">
+                        {{ "buttons.next" | translate }}
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Placeholder for dynamically loading components -->
+    <ng-container #modalContainer></ng-container>
+    
+    <app-filter-dialog  (filterApplied)="onFilterApplied($event)"></app-filter-dialog>
+    <app-edit-language-dialog [selectedPostIds]="selectedIds"></app-edit-language-dialog>
+    <app-edit-status-dialog [selectedPostIds]="selectedIds"></app-edit-status-dialog>
+    <app-edit-category-dialog [selectedPostIds]="selectedIds"></app-edit-category-dialog>
+    <app-delete-mutipal-post [selectedPostIds]="selectedIds"></app-delete-mutipal-post>
+  </div>
+  

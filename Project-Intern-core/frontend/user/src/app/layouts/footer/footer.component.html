@@ -1,0 +1,134 @@
+<footer>
+    <div id="menu-footer">
+        <div class="container">
+            <ul>
+                <li class="tbl-cell">
+                    <a routerLink="/home">{{ "labels.home" | translate }}</a>
+                </li>
+                <li class="tbl-cell" *ngFor="let category of responseDataCategory">
+                    <a routerLink="/category/{{ category.id }}">
+                        {{ category.name }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="regis-promo">
+        <div class="container">
+            <div class="form-regis-promo">
+                <form action="">
+                    <label for="">Đăng ký nhận tin khuyến mãi</label>
+                    <input type="text" placeholder="Nhập E-mail của bạn">
+                    <button>Đăng ký</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="item item-1">
+                <div class="box-item">
+                    <div class="vote-star-footer">
+                        <div class="desc">
+                            <p class="number">16,668</p>
+                            <p>Đánh giá</p>
+                        </div>
+                    </div>
+                    <ul class="link-social-network">
+                        <li>
+                            <a href="" class="ic-fb-ft"></a>
+                        </li>
+                        <li>
+                            <a href="" class="ic-tw-ft"></a>
+                        </li>
+                        <li>
+                            <a href="" class="ic-gp-ft"></a>
+                        </li>
+                        <li>
+                            <a href="" class="ic-rss-ft"></a>
+                        </li>
+                        <li>
+                            <a href="" class="ic-yt-ft"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="item item-1">
+                <div class="box-item">
+                    <div class="title">
+                        <p>Thông tin cần biết</p>
+                    </div>
+                    <ul class="list-footer-v1">
+                        <li>
+                            <a href="">Chính sách bảo mật thông tin</a>
+                        </li>
+                        <li>
+                            <a href="">Điều kiện và Điều khoản</a>
+                        </li>
+                        <li>
+                            <a href="">Phương thức thanh toán</a>
+                        </li>
+                        <li>
+                            <a href="">Bảo hiểm du lịch</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="item item-2">
+                <div class="box-item">
+                    <div class="title">
+                        <p>Thông tin hữu ích</p>
+                    </div>
+                    <ul class="list-footer-v1">
+                        <li>
+                            <a href="">Về VCCorp</a>
+                        </li>
+                        <li>
+                            <a href="">Góc truyền thông</a>
+                        </li>
+                        <li>
+                            <a href="">Tuyển dụng</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="item item-2">
+                <div class="box-item">
+                    <div class="title">
+                        <p>Địa chỉ công ty</p>
+                    </div>
+                    <ul class="list-footer-v2">
+                        <li>
+                            <p><i class="fa fa-map-marker" aria-hidden="true"></i>85 Vũ Trọng Phụng, Thanh Xuân, Hà Nội</p>
+                        </li>
+                        <li>
+                            <p><i class="fa fa-phone" aria-hidden="true"></i>024.6281.6212</p>
+                        </li>
+                        <li>
+                            <p><i class="fa fa-fax" aria-hidden="true"></i>024.6281.6210</p>
+                        </li>
+                        <li>
+                            <p><i class="fa fa-envelope" aria-hidden="true"></i>vccorpgmail.com</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-footer">
+        <div class="container">
+            <div class="item left">
+                <div class="title">
+                    <p>Công ty VCCorp</p><span>( INNOVATION. Non-stop )</span>
+                </div>
+                <P></P>
+                <p></p>
+            </div>
+            <div class="item right">
+                <div class="img-bct">
+                    <img src="../../../assets/img/bo-cong-thuong.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

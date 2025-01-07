@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tin tức</title>
+   <link rel="stylesheet" href="../asset/css/bootstrap.css">
+   <link rel="stylesheet" href="../asset/css/animate.min.css">
+   <link rel="stylesheet" href="../asset/css/font-awesome.min.css">
+   <link rel="stylesheet" href="../asset/css/lightslider.min.css">
+   <link rel="stylesheet" href="../asset/css/jquery-ui.css">
+   <link rel="stylesheet" href="../asset/css/style.css">
+   <link rel="stylesheet" href="../asset/css/reponsive.css">
+   <link rel="stylesheet" href="../asset/css/demo.css">
+   
+  </head>
+  <body>
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="left">
+                    <div class="item">
+                        <div class="avt">
+                            <img src="../asset/img/ic-phone-header-top.png" alt="">
+                        </div>
+                        <a href="">
+                            <span>0988 888 888</span>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <div class="avt">
+                            <img src="../asset/img/ic-email-header-top.png" alt="">
+                        </div>
+                        <a href="">vccorp@gmail.com</a>
+                    </div>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li>
+                            <a href="">Giới Thiệu</a>
+                        </li>
+                        <li class="active">
+                            <a href="">Tin tức du lịch</a>
+                        </li>
+                        <li>
+                            <a href="">Liên hệ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html" class="img">
+                        <img src="../asset/img/logo.jpg" alt="" style="border-radius: 50px;">
+                    </a>
+                </div>
+                <div id="sticker">
+                    <div class="sticker-container" id="sticker-container">
+                        <div class="overlay-sticker"></div>
+                        <div class="warpper">
+                            <div class="head-sticker">
+                                <p>Danh mục</p>
+                                <div id="touch-out">
+                                </div>
+                            </div>
+                            <div class="body-sticker">
+                                <ul class="tbl">
+                                    <li class="tbl-cell">
+                                        <a href="index.html">Trang chủ</a>
+                                    </li>
+                                    <li class="tbl-cell">
+                                        <a href="category-post.html">Thời sự</a>
+                                        <ul>
+                                            <li>
+                                                <a href="category-post.html">demo</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="tbl-cell">
+                                        <a href="category-post.html">Du lịch</a>
+                                    </li>
+                                    <li class="tbl-cell">
+                                        <a href="category-post.html">Thể thao</a>
+                                    </li>
+                                    <li class="tbl-cell">
+                                        <a href="category-post.html">Giáo dục</a>
+                                    </li>
+                                    <li class="tbl-cell">
+                                        <a href="category-post.html">Giải trí</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- <div class="footer-sticker">
+                                <ul class="mb-lang tbl">
+                                    <li class="tbl-cell">
+                                        <a href="#" class="langvi">VN</a>
+                                    </li>
+                                    <li class="tbl-cell">
+                                        <a href="#" class="langen">EN</a>
+                                    </li>
+                                </ul>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div id="touch-on">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="banner-img">
+            <img src="../asset/img/banner-tour.png" alt="">
+        </div>
+        <div class="search-tour">
+            <div class="content">
+                <div class="form-search-tour">
+                    <form action="">
+                        <div class="insize">
+                            <div class="input-search-tour input-search-tour-v2">
+                                <input type="text" placeholder="Tìm kiếm điểm đến, hoạt động">
+                            </div>
+                            <button>Tìm Kiếm</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="body-page">
+        <div class="container">
+            <div id="map-link-bar">
+                <ul>
+                    <li>
+                        <a href="">Trang chủ</a>
+                    </li>
+                    <li>
+                        <a href="">Tin tức du lịch</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row row-85">
+                <div class="col-md-9 col-sm-8 col-child">
+                    <div class="ss3">
+                        <div class="title title2">
+                            <h1 class="title_v3a">
+                                Tin tức du lịch
+                            </h1>
+                            <div class="btn-see-more_v3">
+                                <a href="category-post.html">Xem thêm <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="list-news-cubes-v1">
+                            <div class="item-1 item">
+                                <ul class="run-slider">
+                                    <li>
+                                        <div class="item">
+                                            <div class="avt">
+                                                <img src="../asset/img/item-slider-news-cubes-1-1.png" alt="">
+                                            </div>
+                                            <div class="desc">
+                                                <div class="box-desc">
+                                                    <a href="detail-post.html" class="titleA">Tận hưởng cuộc sống ở thiên đường nghỉ dưỡng Six Senses Côn Đảo sang chảnh bậc nhất Việt Nam</a>
+                                                    <p>Nếu bạn đã từng đặt chân đến những bãi biển nổi tiếng ở Đà Nẵng hay Nha Trang thì Côn Đảo hẳn là một sự lựa chọn không quá mới mẻ nhưng </p>
+                                                    <a href="detail-post.html" class="btn-detail">Chi tiết</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="item-2 item">
+                                <div class="item">
+                                    <div class="avt">
+                                        <img src="../asset/img/item-slider-news-cubes-1-2.png" alt="">
+                                    </div>
+                                    <div class="desc">
+                                        <div class="box-desc">
+                                            <a href="detail-post.html" class="titleA">Trekking Núi Chúa chuyến đi ấn tượng</a>
+                                            <a href="detail-post.html" class="btn-detail">Chi tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-2 item">
+                                <div class="item">
+                                    <div class="avt">
+                                        <img src="../asset/img/item-slider-news-cubes-1-3.png" alt="">
+                                    </div>
+                                    <div class="desc">
+                                        <div class="box-desc">
+                                            <a href="detail-post.html" class="titleA">Trekking Núi Chúa chuyến đi ấn tượng</a>
+                                            <a href="detail-post.html" class="btn-detail">Chi tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                                $(document).ready(function(){
+                                    var Icbh = $('.list-news-cubes-v1>.item-1 .item .avt').width() / 1.49 ;
+                                    $('.list-news-cubes-v1>.item-1 .item .avt').height(Icbh);
+                                    $('.list-news-cubes-v1>.item-2 .item .avt').height((Icbh - 6) / 2);
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <div class="ss3">
+                        <div class="title title2">
+                            <h2 class="title_v3a">
+                                Cẩm nang du lịch
+                            </h2>
+                            <div class="btn-see-more_v3">
+                                <a href="category-post.html">Xem thêm <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="news news-v2">
+                            <div class="body-news">
+                                <div class="item-news-active">
+                                    <div class="box-item">
+                                        <a href="" class="avt">
+                                            <img src="../asset/img/item-slider-news-v1-11.png" alt="">
+                                        </a>
+                                        <div class="desc">
+                                            <h4 class="title-item_v1">
+                                                <a href="">7 điểm đến tuyệt đẹp trên thế giới trong tháng 10 năm nay</a>
+                                            </h4>
+                                            <ul class="date-view">
+                                                <li>
+                                                    <div class="ic-avt">
+                                                        <img src="../asset/img/ic-departure.png" alt="">
+                                                    </div>
+                                                    <p>9/10/2018</p>
+                                                </li>
+                                                <li>
+                                                    <div class="ic-avt">
+                                                        <img src="../asset/img/ic-view.png" alt="">
+                                                    </div>
+                                                    <p>22</p>
+                                                </li>
+                                            </ul>
+                                            <p>7 điểm đến tuyệt đẹp trên thế giới trong tháng 10 năm nay</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider-news_v1">
+                                    <ul class="list-root">
+                                        <li>
+                                            <div class="item">
+                                                <a href="" class="avt">
+                                                    <img src="../asset/img/item-slider-news-v1-12.png" alt="">
+                                                </a>
+                                                <div class="desc">
+                                                    <a href="" class="titleA" >Những điệu nhảy truyền thống được yêu thích trên thế giới</a>
+                                                    <ul class="date-view">
+                                                        <li>
+                                                            <div class="ic-avt">
+                                                                <img src="../asset/img/ic-departure.png" alt="">
+                                                            </div>
+                                                            <p>9/10/2018</p>
+                                                        </li>
+                                                        <li>
+                                                            <div class="ic-avt">
+                                                                <img src="../asset/img/ic-view.png" alt="">
+                                                            </div>
+                                                            <p>22</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="" class="avt">
+                                                    <img src="../asset/img/item-slider-news-v1-13.png" alt="">
+                                                </a>
+                                                <div class="desc">
+                                                    <a href="" class="titleA" >7 điểm đến tuyệt đẹp trên thế giới trong tháng 10 năm nay</a>
+                                                    <ul class="date-view">
+                                                        <li>
+                                                            <div class="ic-avt">
+                                                                <img src="../asset/img/ic-departure.png" alt="">
+                                                            </div>
+                                                            <p>9/10/2018</p>
+                                                        </li>
+                                                        <li>
+                                                            <div class="ic-avt">
+                                                                <img src="../asset/img/ic-view.png" alt="">
+                                                            </div>
+                                                            <p>22</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="" class="avt">
+                                                    <img src="../asset/img/item-slider-news-v1-14.png" alt="">
+                                                </a>
+                                                <div class="desc">
+                                                    <a href="" class="titleA" >Những điệu nhảy truyền thống được yêu thích trên thế giới</a>
+                                                    <ul class="date-view">
+                                                        <li>
+                                                            <div class="ic-avt">
+                                                                <img src="../asset/img/ic-departure.png" alt="">
+                                                            </div>
+                                                            <p>9/10/2018</p>
+                                                        </li>
+                                                        <li>
+                                                            <div class="ic-avt">
+                                                                <img src="../asset/img/ic-view.png" alt="">
+                                                            </div>
+                                                            <p>22</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <a href="" class="avt">
+                                                    <img src="../asset/img/item-slider-news-v1-15.png" alt="">
+                                                </a>
+                                                <div class="desc">
+                                                    <a href="" class="titleA" >Những điệu nhảy truyền thống được yêu thích trên thế giới</a>
+                                                    <ul class="date-view">
+                                                        <li>
+                                                            <div class="ic-avt">
+                                                                <img src="../asset/img/ic-departure.png" alt="">
+                                                            </div>
+                                                            <p>9/10/2018</p>
+                                                        </li>
+                                                        <li>
+                                                            <div class="ic-avt">
+                                                                <img src="../asset/img/ic-view.png" alt="">
+                                                            </div>
+                                                            <p>22</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <script>
+                                    $(document).ready(function(){
+                                        var Nv2ih = $('.news-v2 .slider-news_v1 ul.list-root>li .item .avt').width() / 1.77;
+                                        $('.news-v2 .slider-news_v1 ul.list-root>li .item .avt').height(Nv2ih);
+                                        var Nv2ah = $('.news-v2 .item-news-active .box-item .avt').width() / 1.77;
+                                        $('.news-v2 .item-news-active .box-item .avt').height(Nv2ah);
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ss3">
+                        <div class="title title2">
+                            <h2 class="title_v3a">
+                                Kinh nghiệm du lịch
+                            </h2>
+                            <div class="btn-see-more_v3">
+                                <a href="category-post.html">Xem thêm <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="slider-news_v1 slider-news_v1a">
+                            <ul class="list-root list-item">
+                                <li>
+                                    <div class="item">
+                                        <a href="" class="avt">
+                                            <img src="../asset/img/item-slider-news-v1-5.png" alt="">
+                                        </a>
+                                        <div class="desc">
+                                            <a href="" class="titleA" >Những điệu nhảy truyền thống được yêu thích trên thế giới</a>
+                                            <ul class="date-view">
+                                                <li>
+                                                    <div class="ic-avt">
+                                                        <img src="../asset/img/ic-departure.png" alt="">
+                                                    </div>
+                                                    <p>9/10/2018</p>
+                                                </li>
+                                                <li>
+                                                    <div class="ic-avt">
+                                                        <img src="../asset/img/ic-view.png" alt="">
+                                                    </div>
+                                                    <p>22</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <a href="" class="avt">
+                                            <img src="../asset/img/item-slider-news-v1-6.png" alt="">
+                                        </a>
+                                        <div class="desc">
+                                            <a href="" class="titleA" >7 điểm đến tuyệt đẹp trên thế giới trong tháng 10 năm nay</a>
+                                            <ul class="date-view">
+                                                <li>
+                                                    <div class="ic-avt">
+                                                        <img src="../asset/img/ic-departure.png" alt="">
+                                                    </div>
+                                                    <p>9/10/2018</p>
+                                                </li>
+                                                <li>
+                                                    <div class="ic-avt">
+                                                        <img src="../asset/img/ic-view.png" alt="">
+                                                    </div>
+                                                    <p>22</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <a href="" class="avt">
+                                            <img src="../asset/img/item-slider-news-v1-7.png" alt="">
+                                        </a>
+                                        <div class="desc">
+                                            <a href="" class="titleA" >Những điệu nhảy truyền thống được yêu thích trên thế giới</a>
+                                            <ul class="date-view">
+                                                <li>
+                                                    <div class="ic-avt">
+                                                        <img src="../asset/img/ic-departure.png" alt="">
+                                                    </div>
+                                                    <p>9/10/2018</p>
+                                                </li>
+                                                <li>
+                                                    <div class="ic-avt">
+                                                        <img src="../asset/img/ic-view.png" alt="">
+                                                    </div>
+                                                    <p>22</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <a href="" class="avt">
+                                            <img src="../asset/img/item-slider-news-v1-5.png" alt="">
+                                        </a>
+                                        <div class="desc">
+                                            <a href="" class="titleA" >Những điệu nhảy truyền thống được yêu thích trên thế giới</a>
+                                            <ul class="date-view">
+                                                <li>
+                                                    <div class="ic-avt">
+                                                        <img src="../asset/img/ic-departure.png" alt="">
+                                                    </div>
+                                                    <p>9/10/2018</p>
+                                                </li>
+                                                <li>
+                                                    <div class="ic-avt">
+                                                        <img src="../asset/img/ic-view.png" alt="">
+                                                    </div>
+                                                    <p>22</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <a href="" class="avt">
+                                            <img src="../asset/img/item-slider-news-v1-8.png" alt="">
+                                        </a>
+                                        <div class="desc">
+                                            <a href="" class="titleA" >7 điểm đến tuyệt đẹp trên thế giới trong tháng 10 năm nay</a>
+                                            <ul class="date-view">
+                                                <li>
+                                                    <div class="ic-avt">
+                                                        <img src="../asset/img/ic-departure.png" alt="">
+                                                    </div>
+                                                    <p>9/10/2018</p>
+                                                </li>
+                                                <li>
+                                                    <div class="ic-avt">
+                                                        <img src="../asset/img/ic-view.png" alt="">
+                                                    </div>
+                                                    <p>22</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <a href="" class="avt">
+                                            <img src="../asset/img/item-slider-news-v1-9.png" alt="">
+                                        </a>
+                                        <div class="desc">
+                                            <a href="" class="titleA" >Những điệu nhảy truyền thống được yêu thích trên thế giới</a>
+                                            <ul class="date-view">
+                                                <li>
+                                                    <div class="ic-avt">
+                                                        <img src="../asset/img/ic-departure.png" alt="">
+                                                    </div>
+                                                    <p>9/10/2018</p>
+                                                </li>
+                                                <li>
+                                                    <div class="ic-avt">
+                                                        <img src="../asset/img/ic-view.png" alt="">
+                                                    </div>
+                                                    <p>22</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <script>
+                                $(document).ready(function(){
+                                    var InaH2 = $('.slider-news_v1a ul.list-item>li .item .avt').width() / 1.8137931;
+                                        $('.slider-news_v1a ul.list-item>li .item .avt').height(InaH2);
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <div class="ss3">
+                        <div class="title title2">
+                            <h2 class="title_v3a">
+                                Tour khuyến mại
+                            </h2>
+                            <div class="btn-see-more_v3">
+                                <a href="category-post.html">Xem thêm <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="slider-tour_v1 slider-tour_v1a">
+                            <ul class="list-item list-root">
+                                <li>
+                                    <div class="item">
+                                        <div class="avt">
+                                            <a href="" class="img">
+                                                <img src="../asset/img/item-slider-tour-v1-4.png" alt="">
+                                            </a>
+                                            <div class="desc-avt">
+                                                <div class="price">
+                                                    <span class="new-price">2.381.000đ</span>
+                                                    <span class="old-price">2.580.000đ</span>
+                                                </div>
+                                                <div class="btn-see-more">
+                                                    <a href="">Chi tiết</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="desc">
+                                            <h3>
+                                                <a href="">Du lịch Đà Nẵng - Sơn Trà - Hội An - Bà Nà - Huế</a>
+                                            </h3>
+                                            <ul class="list-info-summary">
+                                                <li>
+                                                    <div class="ic-avt">
+                                                        <img src="../asset/img/ic-departure.png" alt="">
+                                                    </div>
+                                                    <p>Khời hành: 12,26/10.</p>
+                                                </li>
+                                                <li>
+                                                    <div class="ic-avt">
+                                                        <img src="../asset/img/ic-time.png" alt="">
+                                                    </div>
+                                                    <p>Thời gian: 3 ngày 2 đêm</p>
+                                                </li>
+                                                <li>
+                                                    <div class="ic-avt">
+                                                        <img src="../asset/img/ic-planes.png" alt="">
+                                                    </div>
+                                                    <p>Phương tiện: máy bay</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <div class="avt">
+                                            <a href="" class="img">
+                                                <img src="../asset/img/item-slider-tour-v1-5.png" alt="">
+                                            </a>
+                                            <div class="desc-avt">
+                                                <div class="price">
+                                                    <span class="new-price">6.500.000đ</span>
+                                                    <span class="old-price">7.580.000đ</span>
+                                                </div>
+                                                <div class="btn-see-more">
+                                                    <a href="">Chi tiết</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="desc">
+                                            <h3>
+                                                <a href="">Du lịch Châu Đốc: Rừng tràm Trà Sư (Tour Tiết Kiệm)</a>
+                                            </h3>
+                                            <ul class="list-info-summary">
+                                                <li>
+                                                    <div class="ic-avt">
+                                                        <img src="../asset/img/ic-departure.png" alt="">
+                                                    </div>
+                                                    <p>Khời hành: 12,26/10.</p>
+                                                </li>
+                                                <li>
+                                                    <div class="ic-avt">
+                                                        <img src="../asset/img/ic-time.png" alt="">
+                                                    </div>
+                                                    <p>Thời gian: 3 ngày 2 đêm</p>
+                                                </li>
+                                                <li>
+                                                    <div class="ic-avt">
+                                                        <img src="../asset/img/ic-oto.png" alt="">
+                                                    </div>
+                                                    <p>Phương tiện: ô tô</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <div class="avt">
+                                            <a href="" class="img">
+                                                <img src="../asset/img/item-slider-tour-v1-6.png" alt="">
+                                            </a>
+                                            <div class="desc-avt">
+                                                <div class="price">
+                                                    <span class="new-price">18.900.000đ</span>
+                                                    <span class="old-price">20.900.000đ</span>
+                                                </div>
+                                                <div class="btn-see-more">
+                                                    <a href="">Chi tiết</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="desc">
+                                            <h3>
+                                                <a href="">Du lịch Đà Nẵng - Bà Nà - Hội An - Huế - Động Phong Nha</a>
+                                            </h3>
+                                            <ul class="list-info-summary">
+                                                <li>
+                                                    <div class="ic-avt">
+                                                        <img src="../asset/img/ic-departure.png" alt="">
+                                                    </div>
+                                                    <p>Khời hành: 12,26/10.</p>
+                                                </li>
+                                                <li>
+                                                    <div class="ic-avt">
+                                                        <img src="../asset/img/ic-time.png" alt="">
+                                                    </div>
+                                                    <p>Thời gian: 3 ngày 2 đêm</p>
+                                                </li>
+                                                <li>
+                                                    <div class="ic-avt">
+                                                        <img src="../asset/img/ic-planes.png" alt="">
+                                                    </div>
+                                                    <p>Phương tiện: máy bay</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <script>
+                                $(document).ready(function(){
+                                    var Isv2a =  $('.slider-tour_v1 ul.list-item>li .item .avt .img').width() / 1.66666667;
+                                        $('.slider-tour_v1 ul.list-item>li .item .avt .img').height(Isv2a);
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-child">
+                    <div class="box-right-bar">
+                        <div class="title">
+                            <h2 class="title-right-v1">
+                                <a href="">Xem nhiều nhất</a>
+                            </h2>
+                        </div>
+                        <ul class="list-news-right_v1">
+                            <li>
+                                <div class="avt">
+                                    <a href="" class="img">
+                                        <img src="../asset/img/item-news-right-v1-1.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="desc">
+                                    <a href="">Hành trình du lịch Đông Bắc của những đôi chân không</a>
+                                    <ul class="date-view">
+                                        <li>
+                                            <div class="ic-avt">
+                                                <img src="../asset/img/ic-departure.png" alt="">
+                                            </div>
+                                            <p>9/10/2018</p>
+                                        </li>
+                                        <li>
+                                            <div class="ic-avt">
+                                                <img src="../asset/img/ic-view.png" alt="">
+                                            </div>
+                                            <p>22</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="avt">
+                                    <a href="" class="img">
+                                        <img src="../asset/img/item-news-right-v1-1.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="desc">
+                                    <a href="">Hành trình du lịch Đông Bắc của những đôi chân không</a>
+                                    <ul class="date-view">
+                                        <li>
+                                            <div class="ic-avt">
+                                                <img src="../asset/img/ic-departure.png" alt="">
+                                            </div>
+                                            <p>9/10/2018</p>
+                                        </li>
+                                        <li>
+                                            <div class="ic-avt">
+                                                <img src="../asset/img/ic-view.png" alt="">
+                                            </div>
+                                            <p>22</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="avt">
+                                    <a href="" class="img">
+                                        <img src="../asset/img/item-news-right-v1-1.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="desc">
+                                    <a href="">Hành trình du lịch Đông Bắc của những đôi chân không</a>
+                                    <ul class="date-view">
+                                        <li>
+                                            <div class="ic-avt">
+                                                <img src="../asset/img/ic-departure.png" alt="">
+                                            </div>
+                                            <p>9/10/2018</p>
+                                        </li>
+                                        <li>
+                                            <div class="ic-avt">
+                                                <img src="../asset/img/ic-view.png" alt="">
+                                            </div>
+                                            <p>22</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="avt">
+                                    <a href="" class="img">
+                                        <img src="../asset/img/item-news-right-v1-1.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="desc">
+                                    <a href="">Hành trình du lịch Đông Bắc của những đôi chân không</a>
+                                    <ul class="date-view">
+                                        <li>
+                                            <div class="ic-avt">
+                                                <img src="../asset/img/ic-departure.png" alt="">
+                                            </div>
+                                            <p>9/10/2018</p>
+                                        </li>
+                                        <li>
+                                            <div class="ic-avt">
+                                                <img src="../asset/img/ic-view.png" alt="">
+                                            </div>
+                                            <p>22</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="avt">
+                                    <a href="" class="img">
+                                        <img src="../asset/img/item-news-right-v1-1.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="desc">
+                                    <a href="">Hành trình du lịch Đông Bắc của những đôi chân không</a>
+                                    <ul class="date-view">
+                                        <li>
+                                            <div class="ic-avt">
+                                                <img src="../asset/img/ic-departure.png" alt="">
+                                            </div>
+                                            <p>9/10/2018</p>
+                                        </li>
+                                        <li>
+                                            <div class="ic-avt">
+                                                <img src="../asset/img/ic-view.png" alt="">
+                                            </div>
+                                            <p>22</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="avt">
+                                    <a href="" class="img">
+                                        <img src="../asset/img/item-news-right-v1-1.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="desc">
+                                    <a href="">Hành trình du lịch Đông Bắc của những đôi chân không</a>
+                                    <ul class="date-view">
+                                        <li>
+                                            <div class="ic-avt">
+                                                <img src="../asset/img/ic-departure.png" alt="">
+                                            </div>
+                                            <p>9/10/2018</p>
+                                        </li>
+                                        <li>
+                                            <div class="ic-avt">
+                                                <img src="../asset/img/ic-view.png" alt="">
+                                            </div>
+                                            <p>22</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <script>
+                            $(document).ready(function(){
+                             var Inr1h =   $('.box-right-bar .list-news-right_v1>li>.avt').width();
+                             $('.box-right-bar .list-news-right_v1>li>.avt').height(Inr1h);
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div id="menu-footer">
+            <div class="container">
+                <ul>
+                    <li>
+                        <a href="">Trang chủ</a>
+                    </li>
+                    <li>
+                        <a href="">Du lịch</a>
+                    </li>
+                    <li>
+                        <a href="">Thời sự</a>
+                    </li>
+                    <li>
+                        <a href="">Thể thao</a>
+                    </li>
+                    <li>
+                        <a href="">Giáo dục</a>
+                    </li>
+                    <li>
+                        <a href="">Giải trí</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="regis-promo">
+            <div class="container">
+                <div class="form-regis-promo">
+                    <form action="">
+                        <label for="">Đăng ký nhận tin khuyến mãi</label>
+                        <input type="text" placeholder="Nhập E-mail của bạn">
+                        <button>Đăng ký</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="item item-1">
+                    <div class="box-item">
+                        <div class="logo-footer">
+                            <a href="" class="img">
+                                <img src="../asset/img/logo-footer.png" alt="">
+                            </a>
+                        </div>
+                        <div class="vote-star-footer">
+                            <div class="avt">
+                                <img src="../asset/img/vote-star-v1.png" alt="">
+                            </div>
+                            <div class="desc">
+                                <p class="number">16,668</p>
+                                <p>Đánh giá</p>
+                            </div>
+                        </div>
+                        <ul class="link-social-network">
+                            <li>
+                                <a href="" class="ic-fb-ft"></a>
+                            </li>
+                            <li>
+                                <a href="" class="ic-tw-ft"></a>
+                            </li>
+                            <li>
+                                <a href="" class="ic-gp-ft"></a>
+                            </li>
+                            <li>
+                                <a href="" class="ic-rss-ft"></a>
+                            </li>
+                            <li>
+                                <a href="" class="ic-yt-ft"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item item-1">
+                    <div class="box-item">
+                        <div class="title">
+                            <p>Thông tin cần biết</p>
+                        </div>
+                        <ul class="list-footer-v1">
+                            <li>
+                                <a href="">Chính sách bảo mật thông tin</a>
+                            </li>
+                            <li>
+                                <a href="">Điều kiện và Điều khoản</a>
+                            </li>
+                            <li>
+                                <a href="">Phương thức thanh toán</a>
+                            </li>
+                            <li>
+                                <a href="">Bảo hiểm du lịch</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item item-2">
+                    <div class="box-item">
+                        <div class="title">
+                            <p>Thông tin hữu ích</p>
+                        </div>
+                        <ul class="list-footer-v1">
+                            <li>
+                                <a href="">Về VCCorp</a>
+                            </li>
+                            <li>
+                                <a href="">Góc truyền thông</a>
+                            </li>
+                            <li>
+                                <a href="">Tuyển dụng</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item item-2">
+                    <div class="box-item">
+                        <div class="title">
+                            <p>Địa chỉ công ty</p>
+                        </div>
+                        <ul class="list-footer-v2">
+                            <li>
+                                <p><i class="fa fa-map-marker" aria-hidden="true"></i>85 Vũ Trọng Phụng, Thanh Xuân, Hà Nội</p>
+                            </li>
+                            <li>
+                                <p><i class="fa fa-phone" aria-hidden="true"></i>024.6281.6212</p>
+                            </li>
+                            <li>
+                                <p><i class="fa fa-fax" aria-hidden="true"></i>024.6281.6210</p>
+                            </li>
+                            <li>
+                                <p><i class="fa fa-envelope" aria-hidden="true"></i>vccorp@gmail.com</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            <div class="container">
+                <div class="item left">
+                    <div class="title">
+                        <p>Công ty VCCorp</p><span>( INNOVATION. Non-stop )</span>
+                    </div>
+                    <P></P>
+                    <p></p>
+                </div>
+                <div class="item right">
+                    <div class="img-bct">
+                        <img src="../asset/img/bo-cong-thuong.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div></div>
+    <script src="../asset/js/touch.js"></script>
+  </body>
+  </html>

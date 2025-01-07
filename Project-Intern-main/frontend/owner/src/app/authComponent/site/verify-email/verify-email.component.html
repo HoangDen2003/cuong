@@ -1,0 +1,44 @@
+<div class="authentication-wrapper authentication-basic px-4">
+    <div class="authentication-inner">
+        <!-- Two Steps Verification -->
+        <div class="card">
+            <div class="card-body">
+                <!-- Logo -->
+                <div class="app-brand justify-content-center">
+                    <a routerLink="/auth/login" class="app-brand-link gap-2">
+                        <img src="../assets/img/layouts/logo1.jpg" alt="" width="200" height="200" />
+                    </a>
+                </div>
+                <!-- /Logo -->
+                <h4 class="mb-2">Two Step Verification 💬</h4>
+                <p class="text-start mb-4">
+                    We sent a verification code to your mail. Enter the code from
+                    the mail in the field below.
+                </p>
+                <p class="mb-0 fw-medium">Type your 6 digit security code</p>
+                <form id="twoStepsForm" [formGroup]="postForm" (ngSubmit)="onSubmit()"
+                    class="fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate">
+                    <div class="mb-3 fv-plugins-icon-container">
+                        <div
+                            class="auth-input-wrapper d-flex align-items-center justify-content-sm-between numeral-mask-wrapper">
+                            <input *ngFor="let control of otpControls; let i = index" type="tel"
+                                class="form-control auth-input h-px-50 text-center numeral-mask mx-1 my-2" maxlength="1"
+                                [formControl]="control" (input)="onOtpInput($event, i)" />
+                        </div>
+                        <input type="hidden" formControlName="otp"/>
+                        <div
+                            class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary d-grid w-100 mb-3" [disabled]="postForm.invalid">
+                        Verify my account
+                    </button>
+                    <div class="text-center">
+                        <a routerLink="/auth/login">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- / Two Steps Verification -->
+    </div>
+</div>

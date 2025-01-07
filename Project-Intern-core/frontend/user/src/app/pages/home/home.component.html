@@ -1,0 +1,219 @@
+<div id="body-page">
+    <div class="container">
+        <div id="map-link-bar">
+            <ul>
+                <li>
+                    <a routerLink="/home">{{ "labels.home" | translate }}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row row-85">
+            <div class="col-md-9 col-sm-8 col-child">
+                <div class="ss3">
+                    <div class="title title2">
+                        <h1 class="title_v3a">
+                            {{ "labels.news" | translate }}
+                        </h1>
+                        <div class="btn-see-more_v3">
+                            <a routerLink="/category/1">{{ "labels.showDetails" | translate }}<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="list-news-cubes-v1">
+                        <div class="item-1 item">
+                            <ul class="run-slider">
+                                <li *ngFor="let postsNewFirst of postsNewsFirst">
+                                    <div class="item">
+                                        <div class="avt">
+                                            <img src="{{ postsNewFirst.file }}" alt="" style="width: 577.22px; height: 348px;">
+                                        </div>
+                                        <div class="desc">
+                                            <div class="box-desc">
+                                                <a routerLink="/detail-post/{{ postsNewFirst.id }}" class="titleA">{{ getTranslationData(postsNewFirst.translations).title }}</a>
+                                                <a routerLink="/detail-post/{{ postsNewFirst.id }}" class="btn-detail">{{ "labels.showDetails" | translate }}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="item-2 item"  *ngFor="let postsNewSecond of postsNewsSecond">
+                            <div class="item">
+                                <div class="avt" style="width: 267.52px; height: 171.02px;">
+                                    <img src="{{ postsNewSecond.file }}" alt="">
+                                </div>
+                                <div class="desc">
+                                    <div class="box-desc">
+                                        <a routerLink="/detail-post/{{ postsNewSecond.id }}" class="titleA">{{ getTranslationData(postsNewSecond.translations).title }}</a>
+                                        <a routerLink="/detail-post/{{ postsNewSecond.id }}" class="btn-detail">Chi tiết</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ss3">
+                    <div class="title title2">
+                        <h2 class="title_v3a">
+                            {{ "labels.sportsNews" | translate }}
+                        </h2>
+                        <div class="btn-see-more_v3">
+                            <a routerLink="/category/2">{{ "labels.showDetails" | translate }} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="news news-v2">
+                        <div class="body-news">
+                            <div class="item-news-active">
+                                <div class="box-item"  *ngFor="let postSportFirst of postsSportFirst">
+                                    <a routerLink="/detail-post/{{ postSportFirst.id }}" class="avt">
+                                        <img src="{{ postSportFirst.file }}" alt="" style="width: 418.38px; height: 236.11px;">
+                                    </a>
+                                    <div class="desc">
+                                        <h4 class="title-item_v1">
+                                            <a routerLink="/detail-post/{{ postSportFirst.id }}">{{ getTranslationData(postSportFirst.translations).title }}</a>
+                                        </h4>
+                                        <ul class="date-view">
+                                            <li>
+                                                <div class="ic-avt">
+                                                    <img src="../../../assets/img/ic-departure.png" alt="">
+                                                </div>
+                                                <p>{{ postSportFirst.formattedDate }}</p>
+                                            </li>
+                                        </ul>
+                                        <p class="card-text">
+                                            <span class="responsive-img-span" [innerHtml]="getTranslationData(postSportFirst.translations).body"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider-news_v1">
+                                <ul class="list-root">
+                                    <li *ngFor="let postSportSecond of postsSportSecond">
+                                        <div class="item">
+                                            <a routerLink="/detail-post/{{ postSportSecond.id }}" class="avt">
+                                                <img src="{{ postSportSecond.file }}" alt="">
+                                            </a>
+                                            <div class="desc">
+                                                <a routerLink="/detail-post/{{ postSportSecond.id }}" class="titleA" >{{ getTranslationData(postSportSecond.translations).title }}</a>
+                                                <ul class="date-view">
+                                                    <li>
+                                                        <div class="ic-avt">
+                                                            <img src="../../../assets/img/ic-departure.png" alt="">
+                                                        </div>
+                                                        <p>{{ postSportSecond.formattedDate }}</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ss3">
+                    <div class="title title2">
+                        <h2 class="title_v3a">
+                            {{ "labels.scienceNews" | translate }}
+                        </h2>
+                        <div class="btn-see-more_v3">
+                            <a routerLink="/category/3">{{ "labels.showDetails" | translate }} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="slider-news_v1 slider-news_v1a">
+                        <ul class="list-root list-item">
+                            <li *ngFor="let postScienceFirst of postsScienceFirst">
+                                <div class="item">
+                                    <a routerLink="/detail-post/{{ postScienceFirst.id }}" class="avt">
+                                        <img src="{{ postScienceFirst.file }}" alt="">
+                                    </a>
+                                    <div class="desc">
+                                        <a routerLink="/detail-post" class="titleA" >{{ getTranslationData(postScienceFirst.translations).title }}</a>
+                                        <ul class="date-view">
+                                            <li>
+                                                <div class="ic-avt">
+                                                    <img src="../../../assets/img/ic-departure.png" alt="">
+                                                </div>
+                                                <p>{{ postScienceFirst.formattedDate }}</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ss3">
+                    <div class="title title2">
+                        <h2 class="title_v3a">
+                            {{ "labels.entertainmentNews" | translate }}
+                        </h2>
+                        <div class="btn-see-more_v3">
+                            <a routerLink="/category/4">{{ "labels.showDetails" | translate }} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="list-news-cubes-v1">
+                        <div class="item-1 item">
+                            <ul class="run-slider">
+                                <li *ngFor="let postEntertaimentFirst of postsEntertaimentFirst">
+                                    <div class="item">
+                                        <div class="avt">
+                                            <img src="{{ postEntertaimentFirst.file }}" alt="" style="width: 577.22px; height: 348px;">
+                                        </div>
+                                        <div class="desc">
+                                            <div class="box-desc">
+                                                <a routerLink="/detail-post/{{ postEntertaimentFirst.id }}" class="titleA">{{ getTranslationData(postEntertaimentFirst.translations).title }}</a>
+                                                <a routerLink="/detail-post/{{ postEntertaimentFirst.id }}" class="btn-detail">Chi tiết</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="item-2 item"  *ngFor="let postEntertaimentSecond of postsEntertaimentSecond">
+                            <div class="item">
+                                <div class="avt" style="width: 267.52px; height: 171.02px;">
+                                    <img src="{{ postEntertaimentSecond.file }}" alt="">
+                                </div>
+                                <div class="desc">
+                                    <div class="box-desc">
+                                        <a routerLink="/detail-post/{{ postEntertaimentSecond.id }}" class="titleA">{{ getTranslationData(postEntertaimentSecond.translations).title }}</a>
+                                        <a routerLink="/detail-post/{{ postEntertaimentSecond.id }}" class="btn-detail">Chi tiết</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4 col-child">
+                <div class="box-right-bar">
+                    <div class="title">
+                        <h2 class="title-right-v1">
+                            <a routerLink="">{{ "labels.listOfArticles" | translate }}</a>
+                        </h2>
+                    </div>
+                    <ul class="list-news-right_v1">
+                        <li *ngFor="let reponseDataPost of reponseDataPosts">
+                            <div class="avt">
+                                <a routerLink="/detail-post/{{ reponseDataPost.id }}" class="img">
+                                    <img src="{{ reponseDataPost.file }}" alt="">
+                                </a>
+                            </div>
+                            <div class="desc">
+                                <a routerLink="/detail-post/{{ reponseDataPost.id }}">{{ reponseDataPost.title }}</a>
+                                <ul class="date-view">
+                                    <li>
+                                        <div class="ic-avt">
+                                            <img src="../../../assets/img/ic-departure.png" alt="">
+                                        </div>
+                                        <p>{{ reponseDataPost.formattedDate }}</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

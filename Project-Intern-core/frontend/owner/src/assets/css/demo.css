@@ -1,0 +1,491 @@
+/*
+* demo.css
+* File include item demo only specific css only
+******************************************************************************/
+
+.menu .app-brand.demo {
+  height: 64px;
+  margin-top: 12px;
+}
+
+.app-brand-logo.demo svg {
+  width: 22px;
+  height: 38px;
+}
+
+.app-brand-text.demo {
+  font-size: 1.75rem;
+  letter-spacing: -0.5px;
+  /* text-transform: lowercase; */
+}
+
+/* ! For .layout-navbar-fixed added fix padding top to .layout-page */
+/* Detached navbar */
+.layout-navbar-fixed .layout-wrapper:not(.layout-horizontal):not(.layout-without-menu) .layout-page {
+  padding-top: 76px !important;
+}
+
+/* Default navbar */
+.layout-navbar-fixed .layout-wrapper:not(.layout-without-menu) .layout-page {
+  padding-top: 64px !important;
+}
+
+.docs-page .layout-navbar-fixed.layout-wrapper:not(.layout-without-menu) .layout-page,
+.docs-page .layout-menu-fixed.layout-wrapper:not(.layout-without-menu) .layout-page {
+  padding-top: 62px !important;
+}
+
+/* Navbar page z-index issue solution */
+.content-wrapper .navbar {
+  z-index: auto;
+}
+
+/*
+* Content
+******************************************************************************/
+
+.demo-blocks>* {
+  display: block !important;
+}
+
+.demo-inline-spacing>* {
+  margin: 1rem 0.375rem 0 0 !important;
+}
+
+/* ? .demo-vertical-spacing class is used to have vertical margins between elements. To remove margin-top from the first-child, use .demo-only-element class with .demo-vertical-spacing class. For example, we have used this class in forms-input-groups.html file. */
+.demo-vertical-spacing>* {
+  margin-top: 1rem !important;
+  margin-bottom: 0 !important;
+}
+
+.demo-vertical-spacing.demo-only-element> :first-child {
+  margin-top: 0 !important;
+}
+
+.demo-vertical-spacing-lg>* {
+  margin-top: 1.875rem !important;
+  margin-bottom: 0 !important;
+}
+
+.demo-vertical-spacing-lg.demo-only-element> :first-child {
+  margin-top: 0 !important;
+}
+
+.demo-vertical-spacing-xl>* {
+  margin-top: 5rem !important;
+  margin-bottom: 0 !important;
+}
+
+.demo-vertical-spacing-xl.demo-only-element> :first-child {
+  margin-top: 0 !important;
+}
+
+.rtl-only {
+  display: none !important;
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+[dir='rtl'] .rtl-only {
+  display: block !important;
+}
+
+/* Dropdown buttons going out of small screens */
+@media (max-width: 576px) {
+  #dropdown-variation-demo .btn-group .text-truncate {
+    width: 231px;
+    position: relative;
+  }
+
+  #dropdown-variation-demo .btn-group .text-truncate::after {
+    position: absolute;
+    top: 45%;
+    right: 0.65rem;
+  }
+}
+
+/*
+* Layout demo
+******************************************************************************/
+
+.layout-demo-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.layout-demo-placeholder img {
+  width: 900px;
+}
+
+.layout-demo-info {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.btn-addnew {
+  height: 45px;
+  width: 146px;
+  font-family: 'Arial', sans-serif;
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  margin-top: -15px;
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #7981ffeb;
+}
+
+.btn-addnew:hover {
+  background-color: #858cff;
+  color: rgb(255, 255, 255);
+}
+
+/* .table th{
+  font: inherit;
+} */
+
+body {
+  background-color: #2199e854;
+  font-family: 'Arial', sans-serif;
+  /* font-size: 16px; */
+  color: #333;
+  background-color: #f4f4f9;
+}
+
+.content-wrapper {
+  padding: 25px;
+}
+
+.form-container {
+  background-color: #ffffff;
+  padding: 25px;
+  /* border-radius: 8px; */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 39px;
+}
+
+.form-label {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.form-control,
+.form-select {
+  border-radius: 4px;
+}
+
+.btn-primary {
+  background-color: #2199e8;
+  border-color: #2199e8;
+  border-radius: 4px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.header {
+  text-align: center;
+  margin-top: 5px;
+  /* margin-bottom: 20px; */
+}
+
+.row {
+  width: 100%;
+}
+
+.nav-menu {
+  width: 100%;
+}
+
+.content {
+  margin: 30px 25px 25px 25px;
+}
+
+.li-item {
+  width: 70%;
+}
+
+.article--post__title {
+  width: 50%;
+}
+
+.article--post__author-name {
+  color: red;
+}
+
+.light-grey {
+  color: #333;
+}
+
+.read-more-link {
+  color: rgb(38, 0, 255);
+  font-size: 14px;
+}
+
+.article--post__content {
+  width: 60%;
+}
+
+.article--post__stats {
+  float: right;
+  padding: 10px 100px 0px 0px;
+}
+
+.more-content {
+  display: none;
+}
+
+.ck-editor__editable {
+  min-height: 350px;
+}
+
+
+/* switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.switch label:after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: white;
+  top: 2px;
+  left: 2px;
+  transition: all 0.3s;
+}
+
+.switch input:checked+label {
+  background-color: #2196F3;
+}
+
+.switch input:checked+label:after {
+  transform: translateX(20px);
+}
+
+/*end switch */
+
+/* Select flag */
+.custom-select {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+}
+
+.custom-select select {
+  display: none;
+  /* Hide the default dropdown */
+}
+
+.select-selected {
+  text-align: left;
+  width: 100%;
+  padding: 8px;
+  color: #7e8b9ceb;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.select-items {
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  z-index: 99;
+  display: none;
+  max-height: 200px;
+  overflow-y: auto;
+  text-align: left; 
+}
+
+.select-items div {
+  width: 100%;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.select-items div:hover {
+  background-color: #fff;
+}
+
+.select-items div img {
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.preview-img {
+  max-width: 150px;
+  margin: 0 1em 1em 0;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.modal {
+  cursor: pointer;
+  display: none;
+  position: fixed;
+  /* z-index: 1; */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 450px;
+  text-align: center;
+}
+
+.modal-button {
+  width: 95px;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.confirm-button {
+  background-color: #2199e8;
+  color: white;
+}
+
+.cancel-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-left: 170px;
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+      padding: 15px;
+  }
+  
+  .modal-content div {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  
+  .button-container {
+      flex-direction: column;
+      gap: 5px;
+  }
+  
+  .modal-button {
+      width: 100%;
+      padding: 10px;
+  }
+}
+
+.action-item {
+  background-color: rgb(224, 224, 224);
+  color: #333;
+  border: 0px;
+}
+
+
+.card-text {
+  max-height: 3.2rem;
+  overflow: hidden;
+  /* display: -webkit-box; */
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  transition: max-height 0.5s ease;
+  line-height: 1.6rem;
+}
+
+.read-more {
+  line-height: 1.6rem;
+  max-height: 21.2rem;
+  transition: max-height 0.5s ease;
+  text-align: justify;
+}
+
+.card-text-right{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  transition: max-height 0.5s ease;
+  line-height: 1.6rem;
+}
+
+/* .text-muted{
+  float: right;
+  margin-top: 30px;
+  margin-bottom: -10px;
+} */
+
+fa-icon{
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin-right: 3px;
+  vertical-align: middle;
+}
+
+.img-thumbnail {
+  max-width: 150px;
+  margin: 0 1em 1em 0;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.responsive-img-span img,
+.responsive-img-span p img,
+.responsive-img-span picture img,
+.responsive-img-span p picture img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.flags {
+  height: 20px;
+  padding-right: 10px;
+}

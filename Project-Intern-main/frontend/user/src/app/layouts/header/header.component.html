@@ -1,0 +1,91 @@
+<header>
+    <div class="header-top">
+        <div class="container">
+            <div class="left">
+                <div class="item">
+                    <div class="avt">
+                        <img src="../../../assets/img/ic-phone-header-top.png" alt="">
+                    </div>
+                    <a href="">
+                        <span>0988 888 888</span>
+                    </a>
+                </div>
+                <div class="item">
+                    <div class="avt">
+                        <img src="../../../assets/img/ic-email-header-top.png" alt="">
+                    </div>
+                    <a href="">vccorpgmail.com</a>
+                </div>
+            </div>
+            <div class="right">
+                <ul>
+                    <li>
+                        <a style="margin-right: 10px;">{{ 'labels.chooseLanguage' | translate }}:</a>
+                        <select class="form-select" (change)="onLanguageChange($event)">
+                            <option *ngFor="let language of languages" [value]="language.locale + ',' + language.id"
+                                [selected]="selectedLanguage.locale === language.locale">
+                                {{ language.name }}
+                            </option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <a routerLink="/home" class="img">
+                    <img src="../../../assets/img/logo.jpg" alt="" style="border-radius: 50px;">
+                </a>
+            </div>
+            <div id="sticker" [ngClass]="{'active': isMenuOpen}">
+                <div class="sticker-container" id="sticker-container">
+                    <div class="overlay-sticker" (click)="onCloseMenu()"></div>
+                    <div class="warpper">
+                        <div class="head-sticker">
+                            <p>Danh mục</p>
+                            <div id="touch-out" (click)="onCloseMenu()"></div>
+                        </div>
+                        <div class="body-sticker">
+                            <ul class="tbl">
+                                <li class="tbl-cell" [ngClass]="{'active': activeCategoryId === null}">
+                                    <a routerLink="/home" (click)="setActiveCategory(null)">Trang chủ</a>
+                                </li>
+                                <li class="tbl-cell" *ngFor="let category of responseDataCategory"
+                                    [ngClass]="{'active': activeCategoryId === category.id}">
+                                    <a routerLink="/category/{{ category.id }}"
+                                        (click)="setActiveCategory(category.id)">
+                                        {{ category.name }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="touch-on" (click)="onTouchOn()">
+                <span></span>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- <div class="banner">
+    <div class="banner-img">
+        <img src="../../../assets/img/banner-tour.png" alt="">
+    </div>
+    <div class="search-tour">
+        <div class="content">
+            <div class="form-search-tour">
+                <form action="">
+                    <div class="insize">
+                        <div class="input-search-tour input-search-tour-v2">
+                            <input type="text" placeholder="Tìm kiếm điểm đến, hoạt động">
+                        </div>
+                        <button>{{ 'labels.search' | translate }}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> -->

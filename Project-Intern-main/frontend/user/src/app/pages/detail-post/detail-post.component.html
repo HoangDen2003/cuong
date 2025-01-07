@@ -1,0 +1,95 @@
+<div id="body-page">
+    <div class="container">
+        <div id="map-link-bar">
+            <ul>
+                <li>
+                    <a routerLink="/home">{{ 'labels.home' | translate }}</a>
+                </li>
+                <li>
+                    <a routerLink="/category/{{ post?.category.id }}">{{ post?.category.name }}</a>
+                </li>
+                <li>
+                    <a routerLink="/detail-post/{{ post?.id }}">{{ getTranslationData(post.translations).title }}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row row-85">
+            <div class="col-md-9 col-child">
+                <div class="ss3 ss3a">
+                    <div class="title title2">
+                        <h1 class="title_v3a">
+                            {{ getTranslationData(post.translations).title }}
+                        </h1>
+                        <ul class="date-view">
+                            <li>
+                                <div class="ic-avt">
+                                    <img src="../../../assets/img/ic-departure.png" alt="">
+                                </div>
+                                <p>{{ formattedDate }}</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="box-related-news">
+                        <ul>
+                            <li *ngFor="let reponDataPostHeader of reponDataPostsHeader">
+                                <a routerLink="/detail-post/{{ reponDataPostHeader.id }}">{{ getTranslationData(reponDataPostHeader.translations).title }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="text-news" style="font-family: 'Arial', sans-serif;">
+                        <br>
+                        <span [innerHtml]="getTranslationData(post.translations).body" class="responsive-img-span"></span>
+                    </div>
+                    <div class="info-use">
+                        <div class="desc">
+                            <p class="name">{{ post.user.username }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-child">
+                <div class="box-right-bar">
+                    <div class="title">
+                        <h2 class="title-right-v1">
+                            <a>{{ 'labels.category' | translate }}</a>
+                        </h2>
+                    </div>
+                    <ul class="list-tour-right_v1 list-tour-right_v1a">
+                        <li *ngFor="let category of responseDataCategory">
+                            <span>
+                                <a routerLink="/category/{{ category.id }}">{{ category.name }}</a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-right-bar">
+                    <div class="title">
+                        <h2 class="title-right-v1">
+                            <a routerLink="/detail-post">{{ 'labels.listOfArticles' | translate }}</a>
+                        </h2>
+                    </div>
+                    <ul class="list-news-right_v1">
+                        <li *ngFor="let reponseDataPost of reponseDataPosts">
+                            <div class="avt">
+                                <a routerLink="/detail-post/{{ reponseDataPost.id }}" class="img">
+                                    <img src="{{ reponseDataPost.file }}" alt="">
+                                </a>
+                            </div>
+                            <div class="desc">
+                                <a routerLink="/detail-post/{{ reponseDataPost.id }}">{{ reponseDataPost.title }}</a>
+                                <ul class="date-view">
+                                    <li>
+                                        <div class="ic-avt">
+                                            <img src="../../../assets/img/ic-departure.png" alt="">
+                                        </div>
+                                        <p>{{ reponseDataPost.formattedDate }}</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
